@@ -1,0 +1,59 @@
+@model Activity.Models.User
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        span {
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Dojo Activity Center</h1>
+    <div>
+        <h2>Login</h2>
+        <form asp-controller="User" asp-action="Login" method="POST">
+        <label>Email:</label>
+        <input asp-for="Email" />
+        <span asp-validation-for="Email"></span>
+        <br>
+        <label>Password:</label>
+        <input asp-for="Password" />
+        <span asp-validation-for="Password"></span>
+        <br>
+        <button type="submit">Login</button>
+        </form>
+        <span><p>@ViewBag.errors</p></span>
+    </div>
+    <div>
+        <h2>Registration</h2>
+        <form asp-controller="User" asp-action="Register" method="POST">
+            <label>First Name:</label>
+            <input asp-for="FirstName" />
+            <span asp-validation-for="FirstName"></span>
+            <br>
+            <label>Last Name:</label>
+            <input asp-for="LastName" />
+            <span asp-validation-for="LastName"></span>
+            <br>
+            <label>Email:</label>
+            <input asp-for="Email" />
+            <span asp-validation-for="Email"></span>
+            <br>
+            <label>Password:</label>
+            <input asp-for="Password" />
+            <span asp-validation-for="Password"></span>
+            <br>
+            <label>Confirm Password:</label>
+            <input asp-for="ConfirmPW" />
+            <span asp-validation-for="ConfirmPW"></span>
+            <br>
+            <button type="submit">Register</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,10 @@
+/Users/christopherevans/Desktop/Csharp/Activity/obj/Debug/netcoreapp2.0/Activity.csproj.CoreCompileInputs.cache
+/Users/christopherevans/Desktop/Csharp/Activity/obj/Debug/netcoreapp2.0/Activity.AssemblyInfoInputs.cache
+/Users/christopherevans/Desktop/Csharp/Activity/obj/Debug/netcoreapp2.0/Activity.AssemblyInfo.cs
+/Users/christopherevans/Desktop/Csharp/Activity/bin/Debug/netcoreapp2.0/Activity.deps.json
+/Users/christopherevans/Desktop/Csharp/Activity/bin/Debug/netcoreapp2.0/Activity.runtimeconfig.json
+/Users/christopherevans/Desktop/Csharp/Activity/bin/Debug/netcoreapp2.0/Activity.runtimeconfig.dev.json
+/Users/christopherevans/Desktop/Csharp/Activity/bin/Debug/netcoreapp2.0/Activity.dll
+/Users/christopherevans/Desktop/Csharp/Activity/bin/Debug/netcoreapp2.0/Activity.pdb
+/Users/christopherevans/Desktop/Csharp/Activity/obj/Debug/netcoreapp2.0/Activity.dll
+/Users/christopherevans/Desktop/Csharp/Activity/obj/Debug/netcoreapp2.0/Activity.pdb

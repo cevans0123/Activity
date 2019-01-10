@@ -1,0 +1,100 @@
+@using Activity.Models
+@model Activity.Models.Actv
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #top h1 {
+            display: inline;
+            margin-right: 20%;
+            margin-left: 5%;
+        }
+        #top h3 {
+            display: inline;
+        }
+        #right {
+            display: inline-block;
+            position: absolute;
+            right: 50px;
+            margin-top: 20px;
+        }
+        table {
+            border: 2px solid;
+            width: 80%;
+            margin: 20px auto;
+            font-size: large;
+            text-align: center;
+            
+        }
+        tr, td {
+            padding: 10px;
+            border: 1px solid;
+        }
+        th {
+            padding: 10px;
+            background-color: lightgray;
+        }
+        button {
+            margin-left: 10%;
+            width: 130px;
+            height: 30px;
+            background-color: lightskyblue;
+        }
+        button:hover {
+            border: 2px solid;
+        }
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="top">
+        <h1>Dojo Activity Center</h1>
+        <h3>Welcome @ViewBag.User!</h3>
+        <div id="right">
+            <a href="/logout">Log Off</a>
+        </div>
+        <hr>
+    </div>
+    <table>
+        <tr>
+            <th>Activity</th>
+            <th>Date and Time</th>
+            <th>Duration</th>
+            <th>Event Coordinator</th>
+            <th>Participants</th>
+            <th>Actions</th>
+        </tr>
+        
+            @foreach(var activity in @ViewBag.AllActivities)
+            {
+                <tr>
+                    <td><a href="/activity/@activity.ActvId">@activity.Title</a></td>
+                    <td>@activity.Date.ToString("MMMM dd, yyyy") at @activity.Time.ToString("h:mm tt")</td>
+                    <td>@activity.Duration @activity.DurationType</td>
+                    <td>@activity.User.FirstName</td>
+                    <td>@activity.Participants.Count</td>  
+                    @if(ViewBag.User == @activity.User.FirstName)
+                    {
+                    <td><a href="/delete/@activity.ActvId" style="color:red">DELETE</a></td>
+                    }
+                   
+                    else
+                    {
+                    <td><a href="/join/@activity.ActvId">JOIN</a></td>
+                    }
+
+                </tr>
+            }
+        
+    </table>
+    <button><a href="/new" style="color:black">Add New Activity!</a></button>
+    
+
+</body>
+</html>

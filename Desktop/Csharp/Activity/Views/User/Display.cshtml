@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #top h1 {
+            display: inline;
+            margin-right: 20%;
+            margin-left: 5%;
+        }
+        #right {
+            display: inline-block;
+            position: absolute;
+            right: 50px;
+            margin-top: 20px;
+        }
+        #right a {
+            margin-left: 30px;
+        }
+        #event button {
+            display: inline-block;
+        }
+        button:hover {
+            border: 2px solid black;
+        }
+        #event h2 {
+            margin-right: 20%;
+            display: inline-block;
+        }
+        #event {
+            margin: 5%;
+            width: 70%;
+        }
+        .join {
+            height: 40px;
+            width: 150px;
+            font-size: large;
+            background-color: rgba(135, 206, 250, 0.301);
+        }
+        .delete {
+            height: 40px;
+            width: 150px;
+            font-size: large;
+            background-color: rgba(255, 0, 0, 0.300);
+        }
+        ul {
+            list-style-type:none;
+        }
+    </style>
+</head>
+<body>
+    <div id="top">
+        <h1>Dojo Activity Center</h1>
+        <div id="right">
+            <a href="/home">Home</a>
+            <a href="/logout">Log Off</a>
+        </div>
+        <hr>
+    </div>
+    <div id="event">
+        <h2>@ViewBag.ThisActivity.Title</h2>
+        @if(ViewBag.User != @ViewBag.ThisActivity.User.FirstName )
+        {
+        <button class="join"><a href="/join/@ViewBag.ThisActivity.ActvId" style="color:blue; text-decoration: none">JOIN</a></button>
+        }
+        @if(ViewBag.User == @ViewBag.ThisActivity.User.FirstName )
+            {
+                <button class="delete"><a href="/delete" style="color:red; text-decoration: none">DELETE</a></button>
+            }
+        <h4>Event Coodinator: @ViewBag.ThisActivity.User.FirstName</h4>
+        <h4>Description:</h4>
+            <p>@ViewBag.ThisActivity.Description</p>
+        <h4>Participants: </h4>
+        <ul>
+            @foreach(var sheep in @ViewBag.Participant)
+            {
+                <li>@sheep.User.FirstName</li>
+            }
+        </ul>
+    </div>
+
+
+</body>
+</html>

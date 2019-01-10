@@ -1,0 +1,74 @@
+@model Activity.Models.Actv
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #top h1 {
+            display: inline;
+            margin-right: 20%;
+            margin-left: 5%;
+        }
+        #right {
+            display: inline-block;
+            position: absolute;
+            right: 50px;
+            margin-top: 20px;
+        }
+        #right a {
+            margin-left: 30px;
+        }
+        span {
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <div id="top">
+        <h1>Dojo Activity Center</h1>
+        <div id="right">
+            <a href="/home">Home</a>
+            <a href="/logout">Log Off</a>
+        </div>
+        <hr>
+    </div>
+    <div id="form">
+        <h2>Create an Activity!</h2>
+        <span><p>@ViewBag.dateproblem</p></span>
+        <form asp-controller="User">
+            <label>Title:</label>
+            <input asp-for="Title" />
+            <span asp-validation-for="Title"></span>
+            <br>
+            <label>Time:</label>
+            <input type="time" asp-for="Time" />
+            <span asp-validation-for="Time"></span>
+            <br>
+            <label>Date:</label>
+            <input type="date" asp-for="Date" />
+            <span asp-validation-for="Date"></span>
+            <br>
+            <label>Duration:</label>
+            <input asp-for="Duration" />
+            <span asp-validation-for="Duration"></span>
+            <select asp-for="DurationType">
+                <option value="days">days</option>
+                <option value="hours">hours</option>
+                <option value="minutes">minutes</option>
+            </select>
+            <br>
+            <label>Description:</label>
+            <input asp-for="Description" />
+            <span asp-validation-for="Description"></span>
+            <br>
+            <button type="submit">Create Activity</button>
+        </form>
+        <span><p>@ViewBag.errors</p></span>
+    </div>
+
+
+</body>
+</html>
